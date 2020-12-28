@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom'
 
 import logo from '../../assets/logo.svg';
 
@@ -64,13 +65,13 @@ export default function Header(props){
                 <ToolBar disableGutters>
                     <img alt="company logo" className={classes.logo} src={logo} />
                     <Tabs value={value} onChange={handleChange} className={classes.tabContainer} indicatorColor='primary' >
-                        <Tab className={classes.tab} label='home'></Tab>
-                        <Tab className={classes.tab} label='Services'></Tab>
-                        <Tab className={classes.tab} label='The Revolution'></Tab>
-                        <Tab className={classes.tab} label='About us'></Tab>
-                        <Tab className={classes.tab} label='Contact us'></Tab>
+                        <Tab className={classes.tab} component={Link} to='/' label='home'></Tab>
+                        <Tab className={classes.tab} component={Link} to='/services' label='Services'></Tab>
+                        <Tab className={classes.tab} component={Link} to='/revolution' label='The Revolution'></Tab>
+                        <Tab className={classes.tab} component={Link} to='/about' label='About us'></Tab>
+                        <Tab className={classes.tab} component={Link} to='/contact' label='Contact us'></Tab>
                     </Tabs>
-                    <Button variant='contained' color='primary' className={classes.button}>Free Estimate</Button>
+                    <Button variant='contained' color='primary' component={Link} to='/estimate' className={classes.button}>Free Estimate</Button>
                 </ToolBar>
             </AppBar>
         </ElevationScroll>
