@@ -1,12 +1,14 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { makeStyles } from '@material-ui/styles';
-import logo from '../../assets/logo.svg';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Button from '@material-ui/core/Button';
+
+import logo from '../../assets/logo.svg';
+
 
 function ElevationScroll(props) {
     const { children } = props;
@@ -35,6 +37,13 @@ function ElevationScroll(props) {
           ...theme.typography.tab,
           minWidth: 10,
           marginLeft: '25px'
+      },
+      button:{
+          ...theme.typography.estimate,
+          borderRadius: '50px',
+          marginLeft: '50px',
+          marginRight: '25px',
+          height: '45px'
       }
   }))
 
@@ -56,6 +65,7 @@ export default function Header(props){
                         <Tab className={classes.tab} label='About us'></Tab>
                         <Tab className={classes.tab} label='Contact us'></Tab>
                     </Tabs>
+                    <Button variant='contained' color='primary' className={classes.button}>Free Estimate</Button>
                 </ToolBar>
             </AppBar>
         </ElevationScroll>
